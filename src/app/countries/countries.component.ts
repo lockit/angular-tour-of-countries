@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Country } from 'app/models/country'
+import { Country} from '../models/country';
+import { COUNTRIES } from '../mocks/mock-countries';
 
 @Component({
   selector: 'app-countries',
@@ -8,28 +9,16 @@ import { Country } from 'app/models/country'
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
-  country: Country = {
-    id: 'ad',
-    name: 'aNdoRra',
-    population: 78014,
-    flag: 'https://restcountries.eu/data/and.svg',
-    translations: {
-      "de":"Andorra",
-      "es":"Andorra",
-      "fr":"Andorre",
-      "ja":"アンドラ",
-      "it":"Andorra",
-      "br":"Andorra",
-      "pt":"Andorra",
-      "nl":"Andorra",
-      "hr":"Andora",
-      "fa":"آندورا"
-    }
-  };
+    selectedCountry: Country;
+    countries: Country[] = COUNTRIES;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(country: Country): void {
+    this.selectedCountry = country;
   }
 
 }
