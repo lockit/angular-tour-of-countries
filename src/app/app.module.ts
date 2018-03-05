@@ -30,7 +30,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   providers: [
     CountryService,
-    MessageService
+    MessageService,
+    LanguageService
   ],
   bootstrap: [AppComponent]
 })
