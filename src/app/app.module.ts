@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { CapitalizePipe } from './pipes/capitalize.pipe'
+import { TranslatePipe } from './pipes/translate.pipe'
 import { CountryService } from './services/country.service'
 import { MessageService } from './services/message.service'
+import { LanguageService } from './services/language.service'
 
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
@@ -18,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     AppComponent,
     CapitalizePipe,
+    TranslatePipe,
     CountriesComponent,
     CountryDetailComponent,
     MessagesComponent,

@@ -1,5 +1,5 @@
 <div *ngIf="country" class="auto-overflow">
-  <h2>{{country.name | capitalize}} ({{country.population}})</h2>
+  <h2>{{country | translate | capitalize}} ({{country.population}})</h2>
   <div class="col-6">
     <div><span>id: </span>{{country.alpha2Code}}</div>
     <div>

@@ -22,4 +22,5 @@ export class DashboardComponent implements OnInit {
       .subscribe(countries => this.countries = countries.slice(1,5));
   }
 
+
 }
