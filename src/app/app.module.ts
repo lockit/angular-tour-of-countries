@@ -11,6 +11,7 @@ import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     CapitalizePipe,
     CountriesComponent,
     CountryDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
