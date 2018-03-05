@@ -27,3 +27,23 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+select.language {
+  color: #607D8B;
+  background-color: #CFD8DC;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+.auto-overflow{
+  overflow: auto;
+}
+.right{
+  float: right;
+}
+.col-6{
+  float: left;
+  width: 50%;
+}

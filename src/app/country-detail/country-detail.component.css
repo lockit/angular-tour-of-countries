@@ -31,10 +31,3 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
-.auto-overflow{
-  overflow: auto;
-}
-.col-6{
-  float: left;
-  width: 50%;
-}
