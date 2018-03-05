@@ -1,19 +1,10 @@
-<h2>{{country.name | capitalize}} ({{country.population}})</h2>
-<div><span>id: </span>{{country.id}}</div>
-<div><span>name: </span>{{country.name}}</div>
-<div>
-  <label>population:
-    <input [(ngModel)]="country.population" placeholder="population" />
-  </label>
-</div>
-<div><span>translations: </span>
-  <ul>
-    <li>
-      <span>it: </span>{{country.translations.it}}
-    </li>
-    <li>
-      <span>ja: </span>{{country.translations.ja}}
-    </li>
-  </ul>
-</div>
-<img src="{{country.flag}}" />
+<h2>Countries list</h2>
+<ul class="countries">
+  <li
+    *ngFor="let country of countries"
+    [class.selected]="country == selectedCountry"
+    (click)="onSelect(country)">
+    <span class="badge">{{country.alpha2Code}}</span> {{country.name}}
+  </li>
+<ul>
+<app-country-detail [country]="selectedCountry"></app-country-detail>
