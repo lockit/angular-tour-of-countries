@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Country } from 'app/models/country';
-import { COUNTRIES } from 'app/mocks/mock-countries';
+import { Country } from '../models/country';
+import { CountryService } from '../services/country.service';
 
 @Component({
   selector: 'app-countries',
@@ -10,15 +10,21 @@ import { COUNTRIES } from 'app/mocks/mock-countries';
 })
 export class CountriesComponent implements OnInit {
   selectedCountry: Country;
-  countries: Country[] = COUNTRIES;
+  countries: Country[];
 
-  constructor() { }
+  constructor(private countryService: CountryService) { }
 
   ngOnInit() {
+    this.getCountries();
   }
 
   onSelect(country: Country): void{
     this.selectedCountry = country;
+  }
+
+  getCountries(): void{
+    this.countryService.getCountries()
+      .subscribe(countries => this.countries = countries);
   }
 
 }

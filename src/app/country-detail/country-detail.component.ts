@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Country } from 'app/models/country';
+import { Country } from '../models/country';
 
 @Component({
   selector: 'app-country-detail',
