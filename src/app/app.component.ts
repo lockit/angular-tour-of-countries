@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { LanguageService } from 'app/services/language.service'
 
@@ -14,9 +15,11 @@ export class AppComponent {
   languages: Object[] = myGlobals.languages;
   title = 'Tour of countries';
 
-  constructor(private languageService: LanguageService){}
+  constructor(private languageService: LanguageService,
+              private location: Location){}
 
   changeLanguage(item): void {
     this.languageService.setLanguage(item);
+    this.languageService.triggerLanguage++;
   }
 }

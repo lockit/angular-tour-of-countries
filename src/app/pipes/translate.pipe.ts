@@ -7,7 +7,8 @@ import { LanguageService } from 'app/services/language.service'
 export class TranslatePipe implements PipeTransform {
   constructor(private languageService: LanguageService){}
 
-  transform(value: Country): string {
+  transform(value: Country, triggerLanguage: number): string {
+    console.log(triggerLanguage);
     if (!value) return '';
     if (this.languageService.language == 'en') return value.name;
     return value.translations[this.languageService.language];

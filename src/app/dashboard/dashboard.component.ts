@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CountryService } from 'app/services/country.service'
 import { Country } from 'app/models/country'
+import { LanguageService } from 'app/services/language.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ import { Country } from 'app/models/country'
 export class DashboardComponent implements OnInit {
   countries: Country[];
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService,
+              private languageService: LanguageService) { }
 
   ngOnInit() {
     this.getCountries();

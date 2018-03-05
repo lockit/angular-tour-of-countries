@@ -2,7 +2,8 @@
 <ul class="countries">
   <li *ngFor="let country of countries">
     <a routerLink="/detail/{{country.alpha2Code}}">
-      <span class="badge">{{country.alpha2Code}}</span> {{country | translate}}
+      <span class="badge">{{country.alpha2Code}}</span>
+      {{country | translate:languageService.triggerLanguage}}
     </a>
   </li>
 <ul>

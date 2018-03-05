@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Country } from 'app/models/country'
 import { CountryService } from 'app/services/country.service'
+import { LanguageService } from 'app/services/language.service'
 
 @Component({
   selector: 'app-countries',
@@ -12,7 +13,8 @@ export class CountriesComponent implements OnInit {
   selectedCountry: Country;
   countries: Country[];
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService,
+          private languageService: LanguageService) { }
 
   ngOnInit() {
     this.getCountries();
