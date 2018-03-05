@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import * as myGlobals from "./global"
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of countries';
+  languages = myGlobals.LANGUAGES;
 }

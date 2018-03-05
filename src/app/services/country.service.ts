@@ -18,4 +18,9 @@ export class CountryService {
     return of(COUNTRIES);
   }
 
+  getCountry(id: string): Observable<Country> {
+    this.messageService.add(`CountryService: fetch country id=${id}`);
+    return of(COUNTRIES.find(country => country.alpha2Code === id));
+  }
+
 }

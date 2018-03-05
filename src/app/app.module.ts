@@ -6,12 +6,14 @@ import { CapitalizePipe } from './pipes/capitalize.pipe'
 import { CountryService } from './services/country.service'
 import { MessageService } from './services/message.service'
 
+
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LanguageService } from './services/languages.service';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   providers: [
     CountryService,
-    MessageService
+    MessageService,
+    LanguageService
   ],
   bootstrap: [AppComponent]
 })
