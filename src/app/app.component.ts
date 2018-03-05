@@ -20,6 +20,5 @@ export class AppComponent {
 
   changeLanguage(item): void {
     this.languageService.setLanguage(item);
-    this.languageService.triggerLanguage++;
   }
 }

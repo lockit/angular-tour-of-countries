@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common'
+import { Location } from '@angular/common';
 
-import { Country } from 'app/models/country'
-import { CountryService } from 'app/services/country.service'
+import { Country } from 'app/models/country';
+import { CountryService } from 'app/services/country.service';
+import { LanguageService } from 'app/services/language.service';
 
 @Component({
   selector: 'app-country-detail',
@@ -16,6 +17,7 @@ export class CountryDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
+    private languageService: LanguageService,
     private location: Location
   ) { }
 

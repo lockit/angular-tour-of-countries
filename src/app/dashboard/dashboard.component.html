@@ -5,7 +5,7 @@
   <a *ngFor="let country of countries" class="col-1-4"
     routerLink="/detail/{{country.alpha2Code}}">
     <div class="module country">
-      <h4>{{country | translate:languageService.triggerLanguage}}</h4>
+      <h4>{{country | translateCountryName:languageService.language}}</h4>
     </div>
   </a>
 </div>

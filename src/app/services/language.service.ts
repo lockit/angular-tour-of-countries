@@ -7,7 +7,6 @@ import { MessageService } from 'app/services/message.service'
 @Injectable()
 export class LanguageService {
   language: string = myGlobals.defaultLanguage;
-  triggerLanguage: number = 0;
 
   constructor(private messageService: MessageService) { }
 

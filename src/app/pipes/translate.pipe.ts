@@ -1,16 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 import { Country } from 'app/models/country';
-import { LanguageService } from 'app/services/language.service'
 
-@Pipe({name: 'translate'})
-export class TranslatePipe implements PipeTransform {
-  constructor(private languageService: LanguageService){}
+@Pipe({name: 'translateCountryName'})
+export class TranslateCountryNamePipe implements PipeTransform {
+  constructor(){}
 
-  transform(value: Country, triggerLanguage: number): string {
-    console.log(triggerLanguage);
+  transform(value: Country, language: string): string {
     if (!value) return '';
-    if (this.languageService.language == 'en') return value.name;
-    return value.translations[this.languageService.language];
+    if (language == 'en') return value.name;
+    return value.translations[language];
   }
 }
