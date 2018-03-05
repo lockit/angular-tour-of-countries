@@ -1,0 +1,24 @@
+<div *ngIf="country">
+  <h2>{{country.name | capitalize}} ({{country.population}})</h2>
+  <div><span>id: </span>{{country.alpha2Code}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="country.name" placeholder="name" />
+    </label></div>
+  <div>
+    <label>population:
+      <input [(ngModel)]="country.population" placeholder="population" />
+    </label>
+  </div>
+  <div><span>translations: </span>
+    <ul>
+      <li>
+        <span>it: </span>{{country.translations.it}}
+      </li>
+      <li>
+        <span>ja: </span>{{country.translations.ja}}
+      </li>
+    </ul>
+  </div>
+  <img src="{{country.flag}}" />
+</div>
