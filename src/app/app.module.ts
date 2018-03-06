@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+
 
 import { CapitalizePipe } from './pipes/capitalize.pipe'
 import { TranslateCountryNamePipe } from './pipes/translate.pipe'
+import { KeysPipe } from './pipes/keys.pipe'
 import { CountryService } from './services/country.service'
 import { MessageService } from './services/message.service'
 import { LanguageService } from './services/language.service'
@@ -19,17 +23,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizePipe,
-    TranslateCountryNamePipe,
     CountriesComponent,
     CountryDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    CapitalizePipe,
+    TranslateCountryNamePipe,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Angular2FontawesomeModule,
+    HttpClientModule
   ],
   providers: [
     CountryService,

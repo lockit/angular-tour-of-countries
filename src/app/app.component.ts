@@ -3,22 +3,19 @@ import { Location } from '@angular/common';
 
 import { LanguageService } from 'app/services/language.service'
 
-import * as myGlobals from 'app/globals';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedLanguage: string = myGlobals.defaultLanguage;
-  languages: Object[] = myGlobals.languages;
+  selectedLanguage: string;
+  languages: Array<{id:string, name: string}>;
   title = 'Tour of countries';
 
   constructor(private languageService: LanguageService,
-              private location: Location){}
-
-  changeLanguage(item): void {
-    this.languageService.setLanguage(item);
+              private location: Location){
+    this.selectedLanguage = languageService.language;
+    this.languages = languageService.languages();
   }
 }

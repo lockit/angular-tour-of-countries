@@ -3,8 +3,7 @@
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/countries">Countries</a>
   <select class="language right"
-          [(ngModel)]="selectedLanguage"
-          (ngModelChange)="changeLanguage($event)">
+          [(ngModel)]="languageService.language">
     <option *ngFor="let language of languages"
             value="{{language.id}}"
             [selected]="language.id == selectedLanguage">

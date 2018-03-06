@@ -1,5 +1,8 @@
 <div *ngIf="country" class="auto-overflow">
-  <h2>{{country | translateCountryName:languageService.language | capitalize}} ({{country.population}})</h2>
+  <h2>{{country | translateCountryName:languageService.language | capitalize}} ({{country.population}})
+    <fa [name]="'star'"
+        [spin]="countryService.isFavourite(country)"
+        (click)="countryService.toggleFavourite(country)"></fa></h2>
   <div class="col-6">
     <div><span>id: </span>{{country.alpha2Code}}</div>
     <div>
@@ -13,11 +16,9 @@
     </div>
     <div><span>translations: </span>
       <ul>
-        <li>
-          <span>it: </span>{{country.translations.it}}
-        </li>
-        <li>
-          <span>ja: </span>{{country.translations.ja}}
+        <li *ngFor="let key of country.translations | keys">
+          <span>{{key}}: </span>
+            <input [(ngModel)]="country.translations[key]" placeholder="Translation" />
         </li>
       </ul>
     </div>
